@@ -144,22 +144,3 @@ interactions <- plot_min_depth_interactions(interactions_frame,k=30)+scale_fill_
   theme(panel.border = element_rect(fill=NA,color="black", size=2, linetype="solid"))+#边框粗细
   theme(axis.ticks.x=element_line(color="black",size=1,lineend = 1),axis.ticks.y=element_line(color="black",size=1,lineend = 1)) + 
   theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())#刻度线粗细
-
-#
-#
-#
-#
-#
-#
-#
-#source('/Users/rickon/Desktop/randomForestExplainer-master/R/measure_importance.R')
-#source('/Users/rickon/Desktop/randomForestExplainer-master/R/min_depth_distribution.R')
-#source('/Users/rickon/Desktop/randomForestExplainer-master/R/min_depth_interactions.R')
-#library(dplyr)
-#library(magrittr)
-#library(ggplot2)
-#vars <- c('FAT', 'STP', 'Water', 'Tem', 'SOC', 'TN', 'pH', 'BD', 'Clay', 'CEC', 'Nrate', 'UOA', 'others', 'CRF', 'manure', 'SBC', 'Mix', 'DPM', 'Rice', 'Wheat', 'Maize')
-#vars
-#min_depth_interactions_values_ori <- min_depth_interactions_values(rf,vars)
-#min_depth_interactions_values_frame <- data.frame(min_depth_interactions_values_ori[1])  #列是root variable
-#save(min_depth_interactions_values_frame, file = "/Users/rickon/Desktop/min_depth_interactions_values_frame.rda")
