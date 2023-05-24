@@ -1,6 +1,5 @@
 library(randomForest)
 library(devtools)
-#devtools::install_github("MI2DataLab/randomForestExplainer")
 library(randomForestExplainer)
 library(readxl)
 require(ggplot2)
@@ -11,16 +10,11 @@ library(magrittr) # needs to be run every time you start R and want to use %>%
 library(GGally)
 #install.packages("dplyr")
 nh3 = read_excel("E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\nh3.xlsx",sheet = 1)
-#data(Boston, package = "MASS")
-#Boston$chas <- as.logical(Boston$chas)
 str(nh3)
 set.seed(2022)
 rf <- randomForest(EF ~ ., data = nh3, localImp = TRUE, ntree=500,mtry=11,nodesize=1,sampsize=2629)
 
 
-print(rf)
-mean(rf$mse)
-mean(rf$rsq)
 
 
 # <- min_depth_distribution(rf)
@@ -151,28 +145,6 @@ interactions <- plot_min_depth_interactions(interactions_frame,k=30)+scale_fill_
   theme(axis.ticks.x=element_line(color="black",size=1,lineend = 1),axis.ticks.y=element_line(color="black",size=1,lineend = 1)) + 
   theme(panel.grid.major=element_blank(),panel.grid.minor=element_blank())#刻度线粗细
 
-interactions
-ggsave('E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\interactions.png',interactions,dpi = 1000, width = 10, height = 6)
-
-source('E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\explain_forest.R')
-source('E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\measure_importance.R')
-source('E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\min_depth_distribution.R')
-source('E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\min_depth_interactions.R')
-install.packages("GGally")
-x = c(4, 1, 4, NA, 1, NA, 4)
-# NAs are considered identical (unlike base R)
-# default is average
-frankv(x) # na.last=TRUE
-
-#plot_predict_interaction(rf, nh3, "DPM", "Nrate")
-#plot_predict_interaction(rf, nh3, "BD", "Nrate")
-#plot_predict_interaction(rf, nh3, "BD", "Water")
-#plot_predict_interaction(rf, nh3, "Tem", "Nrate")
-#plot_predict_interaction(rf, nh3, "BD", "Tem")
-#plot_predict_interaction(rf, nh3, "Tem", "Water",grid = 100)
-#plot_predict_interaction(rf, nh3, "DPM", "Nrate",grid = 20)
-#plot_predict_interaction(rf, nh3, "DPM", "Tem")
-#
 #
 #
 #
