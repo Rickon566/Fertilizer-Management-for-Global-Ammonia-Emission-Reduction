@@ -13,7 +13,7 @@ library(GGally)
 nh3 = read_excel("E:\\OneDrive - HKUST Connect\\Research\\nh3_ml\\Global_EF_2018\\R\\nh3.xlsx",sheet = 1)
 str(nh3)
 set.seed(2022)
-rf <- randomForest(EF ~ ., data = nh3, localImp = TRUE, ntree=500,mtry=11,nodesize=1,sampsize=2629)
+rf <- randomForest(EF ~ ., data = nh3, localImp = TRUE, ntree=500,mtry=14,nodesize=1,sampsize=2627)
 
 
 
