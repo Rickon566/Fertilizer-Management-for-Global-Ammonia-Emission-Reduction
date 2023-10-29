@@ -1,2 +1,2 @@
-# Cutting-Global-NH3-Emissions-How-AI-Guided-Fertilizer-Management-Can-Help
+# AI-guided fertilizer management for global ammonia emission reduction
 Code for this paper
